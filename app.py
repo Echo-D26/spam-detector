@@ -36,8 +36,8 @@ if st.button("Check"):
     if msg.strip():
         chance = model.predict_proba([clean_text(msg)])[0][1]
         if chance >= 0.5:
-            st.error(f"🚨 This looks like SPAM ({chance:.0%} sure)")
+            st.error(f"This looks like SPAM ({chance:.0%} sure)")
         else:
-            st.success(f"✅ This looks NOT spam ({1 - chance:.0%} sure)")
+            st.success(f"This is not a spam ({1 - chance:.0%} sure)")
     else:
         st.warning("Please paste a message first.")
